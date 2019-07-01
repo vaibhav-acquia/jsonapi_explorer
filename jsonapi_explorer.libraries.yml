@@ -1,0 +1,3 @@
+jsonapi_explorer:
+  js:
+    js/dist/index.js: {preprocess: false}

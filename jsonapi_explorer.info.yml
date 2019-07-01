@@ -1,0 +1,8 @@
+name: JSON:API Explorer
+type: module
+description: Provides a graphical explorer for JSON:API servers.
+package: Core
+core: 8.x
+dependencies:
+  - drupal:jsonapi
+  - jsonapi_schema:jsonapi_schema
