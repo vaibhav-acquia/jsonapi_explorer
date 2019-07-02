@@ -1,21 +1,13 @@
-jsonapi.settings.jsonapi_explorer:
-  path: '/admin/config/services/jsonapi/explorer'
-  defaults:
-    _form: 'Drupal\jsonapi_explorer\Controller\ConfigController'
-    _title: 'JSON:API'
-  requirements:
-    _access: 'TRUE'
-
 jsonapi_explorer.app.index:
   path: '/jsonapi/explorer/app'
   defaults:
-    _controller: 'Drupal\jsonapi_explorer\Controller\ConfigController::app'
+    _controller: 'Drupal\jsonapi_explorer\Controller\AppProxyController::app'
   requirements:
     _access: 'TRUE'
 
 jsonapi_explorer.app:
   path: '/jsonapi/explorer/{file}'
   defaults:
-    _controller: 'Drupal\jsonapi_explorer\Controller\ConfigController::proxy'
+    _controller: 'Drupal\jsonapi_explorer\Controller\AppProxyController::proxy'
   requirements:
     _access: 'TRUE'

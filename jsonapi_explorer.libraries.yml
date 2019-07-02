@@ -1,3 +1,0 @@
-app:
-  js:
-    js/dist/index.js: {preprocess: false}
