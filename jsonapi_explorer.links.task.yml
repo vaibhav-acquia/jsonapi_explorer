@@ -1,0 +1,10 @@
+# @todo: remove this first item when https://www.drupal.org/project/drupal/issues/3065261 lands.
+jsonapi.settings:
+  route_name: jsonapi.settings
+  base_route: jsonapi.settings
+  title: 'Settings'
+
+jsonapi.settings.jsonapi_explorer:
+  base_route: jsonapi.settings
+  route_name: jsonapi.settings.jsonapi_explorer
+  title: 'Explorer'
