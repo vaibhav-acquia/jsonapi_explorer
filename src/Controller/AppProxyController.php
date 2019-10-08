@@ -8,7 +8,12 @@ use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-class AppProxyController extends ControllerBase {
+/**
+ * Class AppProxyController.
+ *
+ * @internal
+ */
+final class AppProxyController extends ControllerBase {
 
   /**
    * The URL of the remo
@@ -29,6 +34,14 @@ class AppProxyController extends ControllerBase {
    */
   protected $corsConfig;
 
+  /**
+   * AppProxyController constructor.
+   *
+   * @param \GuzzleHttp\Client $http_client
+   *   An HTTP client.
+   * @param $explorer_url
+   *   The URL of the explorer SPA to proxy.
+   */
   public function __construct(Client $http_client, $explorer_url) {
     $this->httpClient = $http_client;
     assert(is_string($explorer_url));
@@ -50,10 +63,18 @@ class AppProxyController extends ControllerBase {
     );
   }
 
+  /**
+   * @return \Symfony\Component\HttpFoundation\StreamedResponse
+   */
   public function app() {
     return $this->proxy('index.html');
   }
 
+  /**
+   * @param $file
+   *
+   * @return \Symfony\Component\HttpFoundation\StreamedResponse
+   */
   public function proxy($file) {
     $proxy_url = "{$this->explorerUrl}/$file";
     $response = $this->httpClient->get($proxy_url);
