@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 final class AppProxyController extends ControllerBase {
 
   /**
-   * The URL of the remo
+   * The URL of the remote.
    *
    * @var string
    */
@@ -28,11 +28,6 @@ final class AppProxyController extends ControllerBase {
    * @var \GuzzleHttp\Client
    */
   protected $httpClient;
-
-  /**
-   * @var array
-   */
-  protected $corsConfig;
 
   /**
    * AppProxyController constructor.
@@ -78,7 +73,7 @@ final class AppProxyController extends ControllerBase {
   public function proxy($file) {
     $proxy_url = "{$this->explorerUrl}/$file";
     $response = $this->httpClient->get($proxy_url);
-    return StreamedResponse::create(function () use ($response) {
+    return new StreamedResponse(function () use ($response) {
       $body = $response->getBody();
       while (!$body->eof()) {
         echo $body->read(1024);
