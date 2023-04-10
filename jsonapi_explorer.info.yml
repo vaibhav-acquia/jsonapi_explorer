@@ -3,7 +3,7 @@ type: module
 description: Provides a graphical explorer for JSON:API servers.
 package: Core
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 dependencies:
   - drupal:jsonapi
   - jsonapi_schema:jsonapi_schema
