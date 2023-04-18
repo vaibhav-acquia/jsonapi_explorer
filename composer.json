@@ -1,0 +1,12 @@
+{
+  "name": "drupal/jsonapi_explorer",
+  "type": "drupal-module",
+  "keywords": ["Drupal"],
+  "homepage": "https://www.drupal.org/project/jsonapi_explorer",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/jsonapi_explorer",
+    "source": "http://cgit.drupalcode.org/jsonapi_explorer"
+  },
+  "require": { }
+}
